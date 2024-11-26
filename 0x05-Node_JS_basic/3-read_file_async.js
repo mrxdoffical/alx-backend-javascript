@@ -8,7 +8,7 @@ async function countStudents(path) {
 
     const students = {
       cs: [],
-      swe: [],
+      swe: []
     };
 
     let studentscount = 0;
@@ -28,11 +28,14 @@ async function countStudents(path) {
         }
       }
     });
-    console.log(`Number of students: ${studentscount}`);
-    console.log(`Number of students in CS: ${students.cs.length}. List: ${students.cs.join(', ')}`);
-    console.log(`Number of students in SWE: ${students.swe.length}. List: ${students.swe.join(', ')}`);
 
-    return true;
+    let output = '';
+    output += `Number of students: ${studentscount}\n`;
+    output += `Number of students in CS: ${students.cs.length}. List: ${students.cs.join(', ')}\n`;
+    output += `Number of students in SWE: ${students.swe.length}. List: ${students.swe.join(', ')}`;
+
+    console.log(output);
+    return output;
   } catch (error) {
     throw new Error('Cannot load the database');
   }
