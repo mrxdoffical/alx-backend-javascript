@@ -21,10 +21,10 @@ function countStudents(path) {
 
         if (field === 'CS') {
           students.cs.push(fn);
-          totalStud = +1;
+          totalStud += 1;
         } else if (field === 'SWE') {
           students.swe.push(fn);
-          totalStud = +1;
+          totalStud += 1;
         }
       }
     });
